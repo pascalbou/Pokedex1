@@ -23,16 +23,17 @@ final class AppCoordinator {
     // MARK: - CoordinatorType
 
     func start() {
-        let viewController = ViewController(displayDetail: displayDetail)
+//        let viewController = ViewController(displayDetail: displayDetail)
+        let mainViewController = MainViewController(displayDetail: displayDetail)
 
-        navigationController = UINavigationController(rootViewController: viewController)
+        navigationController = UINavigationController(rootViewController: mainViewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
     func displayDetail(name: String) {
-        let viewController = DetailViewController(name: name)
+//        let viewController = DetailViewController(name: name)
         
-        navigationController.pushViewController(viewController, animated: true)
+//        navigationController.pushViewController(viewController, animated: true)
     }
 }
