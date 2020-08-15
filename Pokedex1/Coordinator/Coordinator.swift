@@ -23,7 +23,6 @@ final class AppCoordinator {
     // MARK: - CoordinatorType
 
     func start() {
-//        let viewController = ViewController(displayDetail: displayDetail)
         let mainViewController = MainViewController(displayDetail: displayDetail)
 
         navigationController = UINavigationController(rootViewController: mainViewController)
@@ -31,9 +30,9 @@ final class AppCoordinator {
         window.makeKeyAndVisible()
     }
     
-    func displayDetail(name: String) {
-//        let viewController = DetailViewController(name: name)
+    func displayDetail(pokemonName: String) {
+        let viewController = DetailViewController(pokemonName: pokemonName)
         
-//        navigationController.pushViewController(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
