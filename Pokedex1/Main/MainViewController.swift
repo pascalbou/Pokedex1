@@ -33,10 +33,9 @@ final class ListDataSource: NSObject, UITableViewDelegate, UITableViewDataSource
 
         let count = (self.pokemonNames.count)
 
-//        fetches more pokemons when reaching the bottom of the list
+        // fetches more pokemons when reaching the bottom of the list
         if indexPath.row > 90, indexPath.row == count - 1 {
             viewModel.fetchNextPokemons(count: count)
-            print("works")
         }
 
         return cell
