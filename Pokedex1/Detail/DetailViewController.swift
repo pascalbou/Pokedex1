@@ -13,6 +13,7 @@ final class DetailViewController: UIViewController {
     let viewModel = DetailViewModel(client: PokemonClient(pathBuilder: PokemonPathBuilder()))
     
     let label: UILabel
+    let types: UILabel
     //    @IBOutlet weak var pokemonImageView: UIImageView!
     //    @IBOutlet weak var pokemonNameLabel: UILabel!
     //    @IBOutlet weak var pokemonTypesLabel: UILabel!
@@ -22,6 +23,9 @@ final class DetailViewController: UIViewController {
         let label = UILabel()
         label.text = pokemonName
         self.label = label
+        
+        let types = UILabel()
+        self.types = types
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -39,6 +43,11 @@ final class DetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(types)
+        types.translatesAutoresizingMaskIntoConstraints = false
+        types.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 32).isActive = true
+        types.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
                 
         bind()
         viewModel.viewDidLoad()
@@ -49,7 +58,7 @@ final class DetailViewController: UIViewController {
     func bind() {
         viewModel.types = { [weak self] types in
             DispatchQueue.main.async {
-                self?.label.text = types
+                self?.types.text = types
             }
         }
         
