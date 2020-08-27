@@ -16,10 +16,6 @@ final class DetailViewController: UIViewController {
     let pokemonTypesLabel: UILabel
     let pokemonAttacksLabel: UILabel
     let pokemonImageView: UIImageView
-    //    @IBOutlet weak var pokemonImageView: UIImageView!
-    //    @IBOutlet weak var pokemonNameLabel: UILabel!
-    //    @IBOutlet weak var pokemonTypesLabel: UILabel!
-    //    @IBOutlet weak var pokemonAttacksLabel: UILabel!
 
     init(pokemonName: String) {
         let pokemonNameLabel = UILabel()
@@ -99,7 +95,7 @@ final class DetailViewController: UIViewController {
             }
         }
         
-//        self.pokemonNameLabel.text = self.viewModel.pokemonName?.capitalized
+        self.pokemonNameLabel.text = self.viewModel.pokemonName?.capitalized
     }
 
 }
