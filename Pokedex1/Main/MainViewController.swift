@@ -10,6 +10,7 @@ import UIKit
 
 final class ListDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    let viewModel = MainViewModel(client: PokemonClient(pathBuilder: PokemonPathBuilder()))
     var pokemonNames: [String]
     let displayDetail: (String) -> Void
     
@@ -30,12 +31,13 @@ final class ListDataSource: NSObject, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath)
         cell.textLabel?.text = pokemonNames[indexPath.row].capitalized
 
-//        let count = (self.pokemonNames.count)
+        let count = (self.pokemonNames.count)
 
-        // fetches more pokemons when reaching the bottom of the list
-//        if indexPath.row > 90, indexPath.row == count - 1 {
-//            viewModel.fetchNextPokemons(count: count)
-//        }
+//        fetches more pokemons when reaching the bottom of the list
+        if indexPath.row > 90, indexPath.row == count - 1 {
+            viewModel.fetchNextPokemons(count: count)
+            print("works")
+        }
 
         return cell
     }
@@ -46,7 +48,6 @@ class MainViewController: UIViewController {
     
     let dataSource: ListDataSource
     let tableView: UITableView
-    private let viewModel = MainViewModel(client: PokemonClient(pathBuilder: PokemonPathBuilder()))
     
     init(displayDetail: @escaping (String) -> Void) {
         dataSource = ListDataSource(pokemonNames: [], displayDetail: displayDetail)
@@ -72,18 +73,18 @@ class MainViewController: UIViewController {
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
         bind()
-        viewModel.viewDidLoad()
+        dataSource.viewModel.viewDidLoad()
     }
 
 
     func bind() {
-        viewModel.pokemonNames = { [weak self] pokemons in
+        dataSource.viewModel.pokemonNames = { [weak self] pokemons in
             self?.dataSource.pokemonNames = pokemons
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
-        viewModel.title = { [weak self] title in
+        dataSource.viewModel.title = { [weak self] title in
             self?.title = title
         }
     }

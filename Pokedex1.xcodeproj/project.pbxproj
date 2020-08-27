@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F6AA67524E71181009DFC26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6AA67424E71181009DFC26 /* AppDelegate.swift */; };
-		3F6AA67924E71181009DFC26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6AA67824E71181009DFC26 /* ViewController.swift */; };
 		3F6AA67E24E71183009DFC26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6AA67D24E71183009DFC26 /* Assets.xcassets */; };
 		3F6AA68124E71183009DFC26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6AA67F24E71183009DFC26 /* LaunchScreen.storyboard */; };
-		3F6AA68924E72075009DFC26 /* DetailViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6AA68824E72075009DFC26 /* DetailViewController0.swift */; };
 		3F6AA68B24E7220D009DFC26 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6AA68A24E7220D009DFC26 /* Coordinator.swift */; };
 		3F9C1A1F24E7F6730067511D /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C1A1E24E7F6730067511D /* Pokemon.swift */; };
 		3F9C1A2124E7F6950067511D /* AllPokemonsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C1A2024E7F6950067511D /* AllPokemonsResponse.swift */; };
@@ -29,11 +27,9 @@
 /* Begin PBXFileReference section */
 		3F6AA67124E71181009DFC26 /* Pokedex1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6AA67424E71181009DFC26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F6AA67824E71181009DFC26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F6AA67D24E71183009DFC26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6AA68024E71183009DFC26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6AA68224E71183009DFC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F6AA68824E72075009DFC26 /* DetailViewController0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController0.swift; sourceTree = "<group>"; };
 		3F6AA68A24E7220D009DFC26 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3F9C1A1E24E7F6730067511D /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		3F9C1A2024E7F6950067511D /* AllPokemonsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonsResponse.swift; sourceTree = "<group>"; };
@@ -84,8 +80,6 @@
 				3F9C1A3224E80D450067511D /* Detail */,
 				3F9C1A1D24E7F65B0067511D /* Models */,
 				3F9C1A2424E7F6C60067511D /* Networking */,
-				3F6AA67824E71181009DFC26 /* ViewController.swift */,
-				3F6AA68824E72075009DFC26 /* DetailViewController0.swift */,
 				3F6AA67D24E71183009DFC26 /* Assets.xcassets */,
 				3F6AA67F24E71183009DFC26 /* LaunchScreen.storyboard */,
 				3F6AA68224E71183009DFC26 /* Info.plist */,
@@ -222,9 +216,7 @@
 				3F6AA68B24E7220D009DFC26 /* Coordinator.swift in Sources */,
 				3F9C1A2A24E7F7170067511D /* HttpMethod.swift in Sources */,
 				3F9C1A2F24E804380067511D /* MainViewController.swift in Sources */,
-				3F6AA68924E72075009DFC26 /* DetailViewController0.swift in Sources */,
 				3F9C1A3124E804480067511D /* MainViewModel.swift in Sources */,
-				3F6AA67924E71181009DFC26 /* ViewController.swift in Sources */,
 				3F9C1A2324E7F6AC0067511D /* PokemonResponse.swift in Sources */,
 				3F9C1A2824E7F6FD0067511D /* PokemonPathBuilder.swift in Sources */,
 				3F9C1A3424E80D580067511D /* DetailViewModel.swift in Sources */,
