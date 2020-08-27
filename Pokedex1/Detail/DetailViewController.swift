@@ -62,12 +62,16 @@ final class DetailViewController: UIViewController {
         pokemonAttacksLabel.translatesAutoresizingMaskIntoConstraints = false
         pokemonAttacksLabel.centerYAnchor.constraint(equalTo: pokemonTypesLabel.centerYAnchor, constant: 32).isActive = true
         pokemonAttacksLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        pokemonAttacksLabel.heightAnchor.constraint(equalToConstant: 64).isActive = true
+//        pokemonAttacksLabel.numberOfLines = 3
         
         view.addSubview(pokemonImageView)
         pokemonImageView.translatesAutoresizingMaskIntoConstraints = false
         pokemonImageView.centerYAnchor.constraint(equalTo: pokemonTypesLabel.centerYAnchor, constant: -128).isActive = true
         pokemonImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                
+        pokemonImageView.heightAnchor.constraint(equalToConstant: 256).isActive = true
+        pokemonImageView.widthAnchor.constraint(equalToConstant: 256).isActive = true
+        
         bind()
         viewModel.viewDidLoad()
         
