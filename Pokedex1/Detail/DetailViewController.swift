@@ -15,6 +15,7 @@ final class DetailViewController: UIViewController {
     let pokemonNameLabel: UILabel
     let pokemonTypesLabel: UILabel
     let pokemonAttacksLabel: UILabel
+    let pokemonImageView: UIImageView
     //    @IBOutlet weak var pokemonImageView: UIImageView!
     //    @IBOutlet weak var pokemonNameLabel: UILabel!
     //    @IBOutlet weak var pokemonTypesLabel: UILabel!
@@ -30,6 +31,9 @@ final class DetailViewController: UIViewController {
         
         let pokemonAttacksLabel = UILabel()
         self.pokemonAttacksLabel = pokemonAttacksLabel
+        
+        let pokemonImageView = UIImageView()
+        self.pokemonImageView = pokemonImageView
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -58,6 +62,11 @@ final class DetailViewController: UIViewController {
         pokemonAttacksLabel.translatesAutoresizingMaskIntoConstraints = false
         pokemonAttacksLabel.centerYAnchor.constraint(equalTo: pokemonTypesLabel.centerYAnchor, constant: 32).isActive = true
         pokemonAttacksLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(pokemonImageView)
+        pokemonImageView.translatesAutoresizingMaskIntoConstraints = false
+        pokemonImageView.centerYAnchor.constraint(equalTo: pokemonTypesLabel.centerYAnchor, constant: -128).isActive = true
+        pokemonImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
                 
         bind()
         viewModel.viewDidLoad()
@@ -78,12 +87,11 @@ final class DetailViewController: UIViewController {
             }
         }
         
-        
-//        viewModel.pokemonSprite = { [weak self] pokemonSprite in
-//            DispatchQueue.main.async {
-//                self?.pokemonImageView.image = UIImage(data: pokemonSprite)
-//            }
-//        }
+        viewModel.pokemonSprite = { [weak self] pokemonSprite in
+            DispatchQueue.main.async {
+                self?.pokemonImageView.image = UIImage(data: pokemonSprite)
+            }
+        }
         
 //        self.pokemonNameLabel.text = self.viewModel.pokemonName?.capitalized
     }
